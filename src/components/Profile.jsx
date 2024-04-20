@@ -7,7 +7,7 @@ function Profile() {
   const { user } = useContext(UserContext);
   const [currentUser, setCurrentUser] = useState(user);
 
-  console.log(user)
+  console.log(user);
 
   // Update currentUser state when user context changes
   useEffect(() => {
@@ -15,17 +15,17 @@ function Profile() {
   }, [user]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md">
+    <div className="flex justify-center items-center min-h-screen bg-gray-900 dark:bg-gray-900">
+      <div className="bg-gray-200 dark:bg-gray-800 p-8 rounded-lg shadow-md">
         {currentUser ? (
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
               Welcome, {currentUser.username}
             </h2>
           </div>
         ) : (
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Please Login</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Please Login</h2>
           </div>
         )}
       </div>

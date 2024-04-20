@@ -15,7 +15,7 @@ function Login() {
     }, 2000);
 
     // Clean up the interval when the component unmounts or when dependencies change
-    clearInterval(intervalId);
+     clearInterval(intervalId);
   }, [password, setUser, username]); // Only run this effect when username, password, or setUser change
 
   const handleSubmit = (e) => {
@@ -30,16 +30,16 @@ function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-center min-h-screen bg-gray-900 dark:bg-gray-900">
       <form
-        className="bg-white p-8 rounded-lg shadow-md"
+        className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl font-bold mb-4">Login</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Login</h2>
         <div className="mb-4">
           <label
             htmlFor="username"
-            className="block text-gray-700 font-semibold mb-2"
+            className="block text-gray-700 dark:text-gray-300 font-semibold mb-2"
           >
             Username
           </label>
@@ -49,13 +49,13 @@ function Login() {
             placeholder="Enter your username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-white"
           />
         </div>
         <div className="mb-6">
           <label
             htmlFor="password"
-            className="block text-gray-700 font-semibold mb-2"
+            className="block text-gray-700 dark:text-gray-300 font-semibold mb-2"
           >
             Password
           </label>
@@ -65,7 +65,7 @@ function Login() {
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 dark:bg-gray-700 dark:text-white"
           />
         </div>
         <button
